@@ -1,0 +1,6 @@
+#!/bin/bash
+
+useradd -d /home/ceph -m ceph
+passwd ceph
+echo "ceph ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph
+chmod 0440 /etc/sudoers.d/ceph
